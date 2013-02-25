@@ -14,6 +14,7 @@ def usage():
 
 if getpass.getuser() != "ubuntu":
     print >> sys.stderr, "error: must run as user ubuntu"
+    usage()
 if len(sys.argv) != 3:
     usage()
 REPO_NAME = sys.argv[1]
@@ -37,8 +38,8 @@ def setup_ssh(repo_name, repo_owner):
         os.mkdir(dir, 0700)
     keys = authorized_keys(repo_name, repo_owner)
     keys_file = '/home/ubuntu/.ssh/authorized_keys'
-    f = open(keys_file, 'w')
-    f.write(keys)
+    f = open(keys_file, 'a')
+    f.write(keys + '\n')
     f.close()
     os.chmod(keys_file, 0600)
 
