@@ -23,5 +23,6 @@ if [ ! -d $GIT_DIR ]; then
     git clone https://github.com/${OWNER}/${REPO}.git
 fi
 
+cd $GIT_DIR/setup
 sh $GIT_DIR/setup/new_computer.sh
 
