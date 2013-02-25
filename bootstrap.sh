@@ -1,4 +1,6 @@
 #!/bin/bash
+su ubuntu
+
 ###----------------------
 # Simple bootstrap script
 
@@ -6,11 +8,11 @@ REPO=photobaby
 OWNER=jayridge
 
 ###----------------------
+
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get install -y git
 
-su ubuntu
 SRC_DIR=/usr/local/src
 GIT_DIR=/usr/local/src/${REPO}
 
